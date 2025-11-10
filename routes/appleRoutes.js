@@ -4,7 +4,7 @@ const router = Router();
 
 const controller = require('../controllers/appleController.js');
 
-router.get('/', controller.appleInvGet);
+router.get('/', controller.getAllApplesRender);
 
 router.get('/:id', controller.getAppleById);
 
@@ -14,7 +14,9 @@ router.post('/new', controller.newApplePost);
 
 router.get('/update/:id', controller.updateAppleFormGet);
 
-router.put('/update/:id', controller.appleUpdate);
+router.get('/update/:id', controller.updateAppleFormGet);
+
+router.put('/update/:id', controller.updateAppleFormPut);
 
 router.get('/delete/:id', controller.deleteApple);
 

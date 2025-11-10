@@ -104,7 +104,7 @@ async function updateAppleFormGet(req, res) {
     
 };
 
-async function updateAppleFormPost(req, res) {
+async function updateAppleFormPut(req, res) {
     try {
         const apple = {
             name: `${req.body.name}`,
@@ -141,4 +141,4 @@ async function deleteApple(req, res) {
     };
 };
 
-module.exports = {deleteApple, updateAppleFormGet, updateAppleFormPost, newAppleGet, newApplePost, getAllApplesRender, getAppleById};
+module.exports = {deleteApple, updateAppleFormGet, updateAppleFormPut, newAppleGet, newApplePost, getAllApplesRender, getAppleById};
