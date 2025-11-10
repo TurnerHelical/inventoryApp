@@ -87,7 +87,7 @@ async function newApplePost(req, res) {
 
 async function updateAppleFormGet(req, res) {
     try {
-        const apple = await db.getAppleById(req.query.id)
+        const apple = await db.getAppleById(req.params.id)
         res.render('updateAppleForm', {
             title: 'Update Apple Form',
             stylesheet:'/styles/update.css',
@@ -116,7 +116,21 @@ async function updateAppleFormPost(req, res) {
             price:`${req.body.price}`
         };
         await db.updateApple(apple);
-        res.redirect(`/${req.query.id}`);
+        res.redirect(`/${req.params.id}`);
+    } catch (err) {
+        res.status(500).render('error', {
+            title: 'Server Error',
+            stylesheet: '/styles/error.css',
+            error: err.message,
+            error_code:'500'
+        });
+    };
+};
+
+async function deleteApple(req, res) {
+    try {
+        await db.deleteApple(req.params.id);
+        res.redirect('/apple');
     } catch (err) {
         res.status(500).render('error', {
             title: 'Server Error',
