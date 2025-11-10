@@ -2,10 +2,12 @@ const pool = require('./pool.js');
 
 async function getAllApples() {
     const {rows} = await pool.query('SELECT * FROM appletree');
+    return rows
 };
 
 async function getAppleById(id) {
     const {rows} = await pool.query(`SELECT * FROM appletree WHERE id = ${id}`);
+    return rows
 };
 
 async function updateApple(data) {
