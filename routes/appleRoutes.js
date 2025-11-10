@@ -4,6 +4,18 @@ const router = Router();
 
 const controller = require('../controllers/appleController.js');
 
+router.use((req, res, next) => {
+  res.locals.appleArray = [];
+  res.locals.name = '';
+  res.locals.nickname = '';
+  res.locals.origin = '';
+  res.locals.quantity = '';
+  res.locals.color = '';
+  res.locals.price = '';
+  res.locals.best_month = '';
+  next();
+});
+
 router.get('/', controller.getAllApplesRender);
 
 router.get('/:id', controller.getAppleById);
