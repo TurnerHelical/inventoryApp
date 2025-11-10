@@ -13,14 +13,14 @@ async function getAppleById(id) {
 async function updateApple(data) {
     await pool.query(`
         UPDATE appletree
-        SET name = $1, nickname = $2, country_of_orgin = $3, quantity = $4, best_month = $5, color = $6, price = $7
+        SET name = $1, nickname = $2, country_of_origin = $3, quantity = $4, best_month = $5, color = $6, price = $7
         WHERE id = $8
         `,[data.name, data.nickname, data.country, data.quantity, data.best_month, data.color, data.price, data.id]);
 };
 
 async function newApple(data) {
     await pool.query(`
-        INSERT INTO appletree (name, nickname, country_of_orgin, quantity, best_month, color, price)
+        INSERT INTO appletree (name, nickname, country_of_origin, quantity, best_month, color, price)
          VALUES ($1, $2, $3, $4, $5, $6, $7)`,[data.name, data.nickname, data.country, data.quantity, data.best_month, data.color, data.price]);
 };
 
