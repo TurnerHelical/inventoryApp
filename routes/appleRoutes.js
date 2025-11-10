@@ -18,3 +18,4 @@ router.put('/update/:id', controller.appleUpdate);
 
 router.get('/delete/:id', controller.deleteApple);
 
+module.exports = router;

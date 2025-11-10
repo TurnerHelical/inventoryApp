@@ -5,3 +5,5 @@ const router = Router();
 const controller = require('../controllers/homeController.js');
 
 router.get('/', controller.homepageGet);
+
+module.exports = router;
