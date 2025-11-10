@@ -85,3 +85,45 @@ async function newApplePost(req, res) {
     };
 };
 
+async function updateAppleFormGet(req, res) {
+    try {
+        const apple = await db.getAppleById(req.query.id)
+        res.render('updateAppleForm', {
+            title: 'Update Apple Form',
+            stylesheet:'/styles/update.css',
+            apple,
+        });
+    } catch (err) {
+        res.status(500).render('error', {
+            title: 'Server Error',
+            stylesheet: '/styles/error.css',
+            error: err.message,
+            error_code:'500'
+        });
+    };
+    
+};
+
+async function updateAppleFormPost(req, res) {
+    try {
+        const apple = {
+            name: `${req.body.name}`,
+            nickname:`${req.body.nickname}`,
+            origin: `${req.body.origin}`,
+            quantity: `${req.body.quantity}`,
+            best_month: `${req.body.best_month}`,
+            color:`${req.body.color}`,
+            price:`${req.body.price}`
+        };
+        await db.updateApple(apple);
+        res.redirect(`/${req.query.id}`);
+    } catch (err) {
+        res.status(500).render('error', {
+            title: 'Server Error',
+            stylesheet: '/styles/error.css',
+            error: err.message,
+            error_code:'500'
+        });
+    };
+};
+
