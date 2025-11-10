@@ -6,6 +6,8 @@ const controller = require('../controllers/appleController.js');
 
 router.get('/', controller.appleInvGet);
 
+router.get('/:id', controller.getAppleById);
+
 router.get('/new', controller.newAppleGet);
 
 router.post('/new', controller.newApplePost);
