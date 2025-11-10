@@ -30,7 +30,7 @@ const SQL =
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         name TEXT NOT NULL UNIQUE,
         nickname TEXT,
-        country_of_orgin TEXT,
+        country_of_origin TEXT,
         quantity INTEGER NOT NULL CHECK (quantity >= 0),
         best_month SMALLINT CHECK (best_month BETWEEN 1 AND 12),
         color TEXT NOT NULL CHECK (color <> ''),
