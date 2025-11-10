@@ -141,3 +141,4 @@ async function deleteApple(req, res) {
     };
 };
 
+module.exports = {deleteApple, updateAppleFormGet, updateAppleFormPost, newAppleGet, newApplePost, getAllApplesRender, getAppleById};
