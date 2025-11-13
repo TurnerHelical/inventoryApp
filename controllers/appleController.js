@@ -2,6 +2,8 @@ const db = require('../db/queries.js');
 
 async function getAllApplesRender(req, res) {
     try{
+        const appleArray = await db.getAllApples();
+        console.log(appleArray);
         res.render('apples', {
             title: 'The Apple List',
             stylesheet: '/styles/appleList.css',
@@ -11,7 +13,7 @@ async function getAllApplesRender(req, res) {
         res.status(500).render('error', {
             title: 'Server Error',
             stylesheet:'error.css',
-            error: 'Unable to reach Database. Please try again later',
+            error: `Unable to reach Database. Please try again later ${err.message}`,
             error_code: '500'
         })
     }
