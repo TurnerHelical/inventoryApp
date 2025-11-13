@@ -3,7 +3,6 @@ const db = require('../db/queries.js');
 async function getAllApplesRender(req, res) {
     try{
         const appleArray = await db.getAllApples();
-        console.log(appleArray);
         res.render('apples', {
             title: 'The Apple List',
             stylesheet: '/styles/appleList.css',
