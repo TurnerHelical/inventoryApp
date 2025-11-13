@@ -11,7 +11,14 @@
                <% } else { %>
                    <% appleArray.map((apple) => { %>
                         <div>
-                            <p> <%= apple.name %> </p>
+                            <% if (!apple.image_link) { %>
+                                <img src="https://placehold.co/200x200" alt="placeholder image">
+                            <% } else { %>
+                                <img src= <%=`${apple.image_link}`%> >
+                            <%}%>
+                            <div>
+                                <p><%= apple.name %> </p>
+                            </div>
                         </div>
                    <% }) %>
               <% } %>
