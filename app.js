@@ -4,7 +4,7 @@ const app = express();
 
 const path = require('path');
 
-const indexRouter = require('/routes/index.js');
+const indexRouter = require('./routes/index.js');
 
 app.set('views', path.join(__dirname, 'views'));
 
