@@ -1,7 +1,7 @@
 const pool = require('./pool.js');
 
 async function getAllApples() {
-    const {rows} = await pool.query('SELECT * FROM appletree');
+    const {rows} = await pool.query('SELECT * FROM appletree ORDER BY id ASC');
     return rows
 };
 
