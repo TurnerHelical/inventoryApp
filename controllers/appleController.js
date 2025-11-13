@@ -33,19 +33,18 @@ async function getAppleById(req, res) {
         } 
         const apple = appleArray[0];
         res.render('apple', {
-            name:`${apple.name}`,
+            name: apple.name,
             stylesheet:'/styles/apple.css',
-            nickname: `${apple.nickname}`,
-            origin: `${apple.country_of_orgin}`,
-            quantity: `${apple.quantity}`,
-            best_month: `${apple.best_month}`,
-            image_link: `${apple.image_link}`,
-            color:`${apple.color}`,
-            price:`${apple.price}`,
+            nickname: apple.nickname,
+            origin: apple.country_of_origin,
+            quantity: apple.quantity,
+            image_link: apple.image_link,
+            color: apple.color,
+            price: apple.price,
             
         });
     } catch (err) {
-        res.render(500).render('error', {
+        res.status(500).render('error', {
             title: 'Server Error',
             stylesheet:'/styles/error.css',
             error: 'Unable to reach Database. Please try again later',
@@ -71,7 +70,6 @@ async function newApplePost(req, res) {
             nickname:`${req.body.nickname}`,
             origin: `${req.body.origin}`,
             quantity: `${req.body.quantity}`,
-            best_month: `${req.body.best_month}`,
             image_link: `${req.body.image_link}`,
             color:`${req.body.color}`,
             price:`${req.body.price}`
@@ -116,7 +114,6 @@ async function updateAppleFormPut(req, res) {
             nickname:`${req.body.nickname}`,
             origin: `${req.body.origin}`,
             quantity: `${req.body.quantity}`,
-            best_month: `${req.body.best_month}`,
             image_link: `${req.body.image_link}`,
             color:`${req.body.color}`,
             price:`${req.body.price}`

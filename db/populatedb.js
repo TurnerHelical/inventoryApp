@@ -32,13 +32,11 @@ const SQL =
         nickname TEXT,
         country_of_origin TEXT,
         quantity INTEGER NOT NULL CHECK (quantity >= 0),
-        best_month SMALLINT CHECK (best_month BETWEEN 1 AND 12),
         color TEXT NOT NULL CHECK (color <> ''),
         image_link TEXT,
         price NUMERIC(10,2) NOT NULL CHECK (price >= 0)
         );
         
-    CREATE INDEX idx_appletree_best_month ON appletree (best_month);
     CREATE INDEX idx_appletree_country ON appletree (country_of_origin);
     CREATE INDEX idx_appletree_color ON appletree (color);
     CREATE INDEX idx_appletree_price ON appletree (price);

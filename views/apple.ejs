@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <% include('partials/head') %>
+    <%- include('partials/head') %>
     <body>
-        <% include('partials/header') %>
+        <%- include('partials/header') %>
         <main>
-            <p> <%= name %> </p>
+            <div id="appleCtr">
+                <img id="appleImg" src="<%= image_link || 'https://placehold.co/200x200'%>">
+                <h2><%=name%></h2>
+                <div id="appleInfo">
+                    <p>Name: <%=name%></p>
+                    <p>Also known as: <%=nickname || 'N/A'%></p>
+                    <p>Origin: <%=origin || 'Unknown'%></p>
+                    <p>Color: <%=color%></p>
+                    <p>Price per apple: $<%=price%></p>
+                </div>
+
+            </div>
         </main>
     </body>
 </html>
