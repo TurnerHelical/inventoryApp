@@ -6,6 +6,6 @@ const homeRouter = require('../routes/homeRoutes.js');
 const appleRouter = require('../routes/appleRoutes.js');
 
 router.use('/', homeRouter);
-router.use('/apple', appleRouter);
+router.use('/apples', appleRouter);
 
 module.exports = router;

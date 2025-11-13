@@ -10,7 +10,8 @@
                     <p>No apples found in database</p>
                <% } else { %>
                    <% appleArray.map((apple) => { %>
-                        <div class="apple">
+                        <a href= <%=`/apples/${apple.id}`%>>
+                            <div class="apple">
                             <% if (!apple.image_link) { %>
                                 <img src="https://placehold.co/200x200" alt="placeholder image">
                             <% } else { %>
@@ -26,6 +27,7 @@
                                 <% } %>
                             </div>
                         </div>
+                        </a>
                    <% }) %>
               <% } %>
             </div>

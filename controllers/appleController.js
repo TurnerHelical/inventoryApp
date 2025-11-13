@@ -3,7 +3,7 @@ const db = require('../db/queries.js');
 async function getAllApplesRender(req, res) {
     try{
         const appleArray = await db.getAllApples();
-        res.render('apples', {
+        res.render('appleList', {
             title: 'The Apple List',
             stylesheet: '/styles/appleList.css',
             appleArray,
@@ -90,11 +90,13 @@ async function newApplePost(req, res) {
 
 async function updateAppleFormGet(req, res) {
     try {
+        const { success } = req.query;
         const apple = await db.getAppleById(req.params.id)
         res.render('updateAppleForm', {
             title: 'Update Apple Form',
             stylesheet:'/styles/update.css',
             apple,
+            success,
         });
     } catch (err) {
         res.status(500).render('error', {
@@ -120,7 +122,7 @@ async function updateAppleFormPut(req, res) {
             price:`${req.body.price}`
         };
         await db.updateApple(apple);
-        res.redirect(`/${req.params.id}`);
+        res.redirect(`/${req.params.id}?success=1`);
     } catch (err) {
         res.status(500).render('error', {
             title: 'Server Error',
@@ -134,7 +136,7 @@ async function updateAppleFormPut(req, res) {
 async function deleteApple(req, res) {
     try {
         await db.deleteApple(req.params.id);
-        res.redirect('/apple');
+        res.redirect('/apples');
     } catch (err) {
         res.status(500).render('error', {
             title: 'Server Error',
