@@ -18,6 +18,12 @@
                             <%}%>
                             <div>
                                 <p><%= apple.name %> </p>
+                                <p>$<%= apple.price %>/ea</p>
+                                <% if (apple.quantity < 50) { %>
+                                    <p>Low stock</p>
+                                <% } else if (apple.quantity === 0) { %>
+                                    <p>Out of stock, more coming soon!</p>
+                                <% } %>
                             </div>
                         </div>
                    <% }) %>
