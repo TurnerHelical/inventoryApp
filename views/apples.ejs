@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partial/head') %>
+    <body>
+        <%- include('partial/header') %>
+        <div>
+            <h2>Apple List</h2>
+            <div>
+                <% if (appleArray.length === 0) { %>
+                    <p>No apples found in database</p>
+               <% } else { %>
+                   <% appleArray.map((apple) => { %>
+                        <div>
+                            <p> <%= apple.name %> </p>
+                        </div>
+                   <% }) %>
+              <% } %>
+            </div>
+        </div>
+        
+
+    </body>
+</html>

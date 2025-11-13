@@ -38,6 +38,7 @@ async function getAppleById(req, res) {
             origin: `${apple.country_of_orgin}`,
             quantity: `${apple.quantity}`,
             best_month: `${apple.best_month}`,
+            image_link: `${apple.image_link}`,
             color:`${apple.color}`,
             price:`${apple.price}`,
             
@@ -70,6 +71,7 @@ async function newApplePost(req, res) {
             origin: `${req.body.origin}`,
             quantity: `${req.body.quantity}`,
             best_month: `${req.body.best_month}`,
+            image_link: `${req.body.image_link}`,
             color:`${req.body.color}`,
             price:`${req.body.price}`
         }
@@ -112,6 +114,7 @@ async function updateAppleFormPut(req, res) {
             origin: `${req.body.origin}`,
             quantity: `${req.body.quantity}`,
             best_month: `${req.body.best_month}`,
+            image_link: `${req.body.image_link}`,
             color:`${req.body.color}`,
             price:`${req.body.price}`
         };

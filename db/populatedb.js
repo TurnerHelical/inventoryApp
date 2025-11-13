@@ -34,6 +34,7 @@ const SQL =
         quantity INTEGER NOT NULL CHECK (quantity >= 0),
         best_month SMALLINT CHECK (best_month BETWEEN 1 AND 12),
         color TEXT NOT NULL CHECK (color <> ''),
+        image_link TEXT,
         price NUMERIC(10,2) NOT NULL CHECK (price >= 0)
         );
         
