@@ -34,3 +34,7 @@ nav {
     background-color: aliceblue;
     cursor: pointer;
 }
+
+a {
+    all: unset;
+}

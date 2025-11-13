@@ -6,6 +6,10 @@ main {
     gap: 50px;
 }
 
+a {
+    cursor: pointer;
+}
+
 h2 {
     font-size: 32px;
 }
