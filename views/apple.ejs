@@ -12,9 +12,15 @@
                     <p>Also known as: <%=nickname || 'N/A'%></p>
                     <p>Origin: <%=origin || 'Unknown'%></p>
                     <p>Color: <%=color%></p>
-                    <p id="price">Price per apple: $<%=price%></p>
+                    <p id="price">Average Price per apple: $<%=avgPrice%></p>
                 </div>
 
+            </div>
+            <div id="appleNotes">
+                <h3>Notes</h3>
+                <div id="noteCtr">
+                    <p><%= notes || 'No notes for this apple.' %></p>
+                </div>
             </div>
         </main>
     </body>

@@ -33,14 +33,16 @@ async function getAppleById(req, res) {
         } 
         const apple = appleArray[0];
         res.render('apple', {
+            title: apple.name,
             name: apple.name,
             stylesheet:'/styles/apple.css',
             nickname: apple.nickname,
             origin: apple.country_of_origin,
             quantity: apple.quantity,
             image_link: apple.image_link,
+            notes: apple.notes,
             color: apple.color,
-            price: apple.price,
+            avgPrice: apple.avg_price,
             
         });
     } catch (err) {
@@ -71,8 +73,9 @@ async function newApplePost(req, res) {
             origin: `${req.body.origin}`,
             quantity: `${req.body.quantity}`,
             image_link: `${req.body.image_link}`,
+            notes: `${req.body.notes}`,
             color:`${req.body.color}`,
-            price:`${req.body.price}`
+            avgPrice:`${req.body.avgPrice}`
         }
         await db.newApple(apple);
         res.redirect('/new?success=1');
@@ -115,8 +118,9 @@ async function updateAppleFormPut(req, res) {
             origin: `${req.body.origin}`,
             quantity: `${req.body.quantity}`,
             image_link: `${req.body.image_link}`,
+            notes: `${req.body.notes}`,
             color:`${req.body.color}`,
-            price:`${req.body.price}`
+            avgPrice:`${req.body.avgPrice}`
         };
         await db.updateApple(apple);
         res.redirect(`/${req.params.id}?success=1`);

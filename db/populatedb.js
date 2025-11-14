@@ -33,13 +33,22 @@ const SQL =
         country_of_origin TEXT,
         quantity INTEGER NOT NULL CHECK (quantity >= 0),
         color TEXT NOT NULL CHECK (color <> ''),
+        notes TEXT,
         image_link TEXT,
-        price NUMERIC(10,2) NOT NULL CHECK (price >= 0)
+        avg_price NUMERIC(10,2) NOT NULL CHECK (avg_price >= 0)
         );
         
     CREATE INDEX idx_appletree_country ON appletree (country_of_origin);
     CREATE INDEX idx_appletree_color ON appletree (color);
-    CREATE INDEX idx_appletree_price ON appletree (price);
+    CREATE INDEX idx_appletree_avg_price ON appletree (avg_price);
+
+    INSERT INTO appletree (name, nickname, country_of_origin, quantity, color, notes, image_link, avg_price) VALUES('test', NULL, NULL, 50, 'Blue', NULL, NULL, 2.99);
+    INSERT INTO appletree (name, nickname, country_of_origin, quantity, color, notes, image_link, avg_price) VALUES('test1', NULL, NULL, 50, 'Blue', NULL, NULL, 2.99);
+    INSERT INTO appletree (name, nickname, country_of_origin, quantity, color, notes, image_link, avg_price) VALUES('test2', NULL, NULL, 50, 'Blue', NULL, NULL, 2.99);
+    INSERT INTO appletree (name, nickname, country_of_origin, quantity, color, notes, image_link, avg_price) VALUES('test3', NULL, NULL, 50, 'Blue', NULL, NULL, 2.99);
+    INSERT INTO appletree (name, nickname, country_of_origin, quantity, color, notes, image_link, avg_price) VALUES('test4', NULL, NULL, 50, 'Blue', NULL, NULL, 2.99);
+    INSERT INTO appletree (name, nickname, country_of_origin, quantity, color, notes, image_link, avg_price) VALUES('test5', NULL, NULL, 50, 'Blue', NULL, NULL, 2.99);
+    INSERT INTO appletree (name, nickname, country_of_origin, quantity, color, notes, image_link, avg_price) VALUES('test6', NULL, NULL, 50, 'Blue', NULL, NULL, 2.99);
     `;
 
 // process.argv is a built-in Node array that contains the arguements used in the command line script, the arguments in the script are split up into string by spaces in the code

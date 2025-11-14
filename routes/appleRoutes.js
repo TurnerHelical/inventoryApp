@@ -13,6 +13,7 @@ router.use((req, res, next) => {
   res.locals.color = '';
   res.locals.price = '';
   res.locals.best_month = '';
+  res.locals.notes = '';
   next();
 });
 
