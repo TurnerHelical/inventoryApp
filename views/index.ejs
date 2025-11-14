@@ -3,7 +3,22 @@
     <%- include('partials/head') %>
     <body>
         <%-  include('partials/header') %>
-        <h1> <%- title %> </h1>
+        <main>
+            <div id="pageTitleCtr">
+                <h1 id="pageTitle"> <%- title %> </h1>
+            </div>
 
+            <div id="aboutCtr">
+                <h2>Why?</h2>
+                <p>I created this site to showcase and practice my full stack ability.
+                     On this site I'm using several different server-side libraries with Node, Express, and Postgres as the main focus.
+                     The front-end is just basic css as this is project more about practicing the server-side functions.
+                     Visitors have the ability to view the apples in the database and clicking the individual cards will open a new page with further information,
+                     also pulled from the database. I have implemented some simple authentication to limit who can edit the database and the items within.
+                     Authenticated users are able to add new apples via a form accessed with a button on the Apple List page.
+                     The individual apple pages also contain an update and delete buttons with will open an update form and remove the apple from the database respectively.
+                     This gives this app full CRUD functionality. Thanks for checking it out! </p>
+            </div>
+        </main>
     </body>
 </html>

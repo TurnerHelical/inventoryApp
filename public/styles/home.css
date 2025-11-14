@@ -1,0 +1,40 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3vw 25vw;
+}
+
+#pageTitleCtr {
+    height: 40vh;
+    min-height: 400px;
+    width: 25vw;
+    min-width: 480px;
+    background-image: url('../assets/appleTree.png');
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding:0 10px 10px 0;
+}
+
+#pageTitle {
+    background-color: rgba(0, 0, 0, 50%);
+    color: white;
+}
+
+#aboutCtr {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#aboutCtr h2 {
+    width: 75%;
+    border-bottom: 2px #EB6D42 solid;
+}
+
+#aboutCtr p {
+    text-align: center;
+}
