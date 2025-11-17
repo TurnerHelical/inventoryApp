@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <%- include('partials/head.') %>
+    <%- include('partials/head') %>
 
     <body>
         <%- include('partials/header') %>
 
         <main>
-            <form action="/apple/new" method="POST">
+            <form action="/apples/new" method="POST">
                 <h2>Add New Apple</h2>
                 <div>
                     <label for="name">Name: </label>
@@ -35,7 +35,7 @@
 
                 <div>
                     <label for="notes">Notes (Optional): </label>
-                    <input type="text" name="notes" id="notes" placeholder="Enter any other notes about the apple here.">
+                    <textarea name="notes" id="notes" cols="30" rows="5" placeholder="Enter any other notes about the apple here."></textarea>
                 </div>
 
                 <div>

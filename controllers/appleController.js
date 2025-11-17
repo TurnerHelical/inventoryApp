@@ -55,14 +55,26 @@ async function getAppleById(req, res) {
 };
 
 async function newAppleGet(req, res) {
-    const { success } = req.query;
 
-    res.render('newApple', {
+    try {
+        res.render('newApple', {
         title: 'New Apple Form',
-        stylesheet:'styles/newAppleForm.css',
-        success,
-    });
-};
+        stylesheet:'/styles/update.css',
+        
+        });
+    } catch (err) {
+        res.status(500).render('error', {
+            title:'Server Error',
+            stylesheet:'/styles/error.css',
+            error: 'why',
+            error_code:'500',
+        });
+    };
+    };
+
+    
+    
+
 
 async function newApplePost(req, res) {
     try {
@@ -89,13 +101,12 @@ async function newApplePost(req, res) {
 
 async function updateAppleFormGet(req, res) {
     try {
-        const { success } = req.query;
-        const apple = await db.getAppleById(req.params.id)
+        const appleArray = await db.getAppleById(req.params.id);
+        const apple = appleArray[0];
         res.render('updateApple', {
             title: 'Update Apple Form',
             stylesheet:'/styles/update.css',
             apple,
-            success,
         });
     } catch (err) {
         res.status(500).render('error', {
