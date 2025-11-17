@@ -57,7 +57,7 @@ async function getAppleById(req, res) {
 async function newAppleGet(req, res) {
     const { success } = req.query;
 
-    res.render('newAppleForm', {
+    res.render('newApple', {
         title: 'New Apple Form',
         stylesheet:'styles/newAppleForm.css',
         success,
@@ -91,7 +91,7 @@ async function updateAppleFormGet(req, res) {
     try {
         const { success } = req.query;
         const apple = await db.getAppleById(req.params.id)
-        res.render('updateAppleForm', {
+        res.render('updateApple', {
             title: 'Update Apple Form',
             stylesheet:'/styles/update.css',
             apple,

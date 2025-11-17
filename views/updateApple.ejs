@@ -25,27 +25,42 @@
 
                 <div>
                     <label for="origin">Country of Origin (Optional): </label>
-                    <input type="text" name="origin" id="origin" placeholder="USA">
+                    <input type="text" name="origin" id="origin" 
+                    <% if (apple.origin) { %>
+                        value='<%= apple.origin%>'
+                    <%} else { %>
+                        placeholder="USA"
+                    <%}%>>
                 </div>
 
                 <div>
                     <label for="color">Color: </label>
-                    <input type="text" name="color" id="color" required placeholder="red/green">
+                    <input type="text" name="color" id="color" required value="<%= apple.color%>">
                 </div>
 
                 <div>
                     <label for="image_link">Link to an image of the apple: </label>
-                    <input type="text" name="image_link" id="image_link" placeholder="https://www.Website.com/path/to/apple/image">
+                    <input type="text" name="image_link" id="image_link"
+                    <% if (apple.image_link) { %>
+                        value='<%=apple.image_link%>'
+                    <%} else { %>
+                        placeholder="https://www.Website.com/path/to/apple/image"
+                    <%}%>>
                 </div>
 
                 <div>
                     <label for="notes">Notes (Optional): </label>
-                    <input type="text" name="notes" id="notes" placeholder="Enter any other notes about the apple here.">
+                    <input type="text" name="notes" id="notes" 
+                    <% if (apple.notes) { %>
+                        value='<%=apple.notes%>'
+                    <%} else { %>
+                        placeholder="Enter any other notes about the apple here."
+                    <%}%>>
                 </div>
 
                 <div>
                     <label for="avgPrice"> Price per apple: </label>
-                    <input type="number" name="avgPrice" id="avgPrice" required placeholder="1.99">
+                    <input type="number" name="avgPrice" id="avgPrice" required value="<%=apple.price%>">
                 </div>
 
                 <button type="submit">Submit</button>
