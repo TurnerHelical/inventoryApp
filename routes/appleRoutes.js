@@ -9,10 +9,8 @@ router.use((req, res, next) => {
   res.locals.name = '';
   res.locals.nickname = '';
   res.locals.origin = '';
-  res.locals.quantity = '';
   res.locals.color = '';
-  res.locals.price = '';
-  res.locals.best_month = '';
+  res.locals.AvgPrice = '';
   res.locals.notes = '';
   next();
 });

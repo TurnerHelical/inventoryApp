@@ -20,11 +20,6 @@
                             <div class="appleInfo">
                                 <p class="appleName"><%= apple.name %> </p>
                                 <p class="applePrice">$<%= apple.avg_price %>/ea</p>
-                                <% if (apple.quantity === 0) { %>
-                                    <p class="noStock">Out of stock, more coming soon!</p>
-                                <% } else if (apple.quantity < 50) { %>
-                                    <p class="lowStock">Low stock</p>
-                                <% } %>
                             </div>
                         
                         </a>
