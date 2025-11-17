@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head.') %>
+
+    <body>
+        <%- include('partials/header') %>
+
+        <main>
+            <form action="/apple/new" method="POST">
+                <h2>Add New Apple</h2>
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" required value="<%= apple.name %>">
+                </div>
+
+                <div>
+                    <label for="nickname">Nickname (Optional): </label>
+                    <input type="text" name="nickname" id="nickname" 
+                    <% if (apple.nickname) { %>
+                        value='<%=apple.nickname%>'    
+                    <% } else {
+                        placeholder='Also known as - if applicable'
+                   }%>>
+                </div>
+
+                <div>
+                    <label for="origin">Country of Origin (Optional): </label>
+                    <input type="text" name="origin" id="origin" placeholder="USA">
+                </div>
+
+                <div>
+                    <label for="color">Color: </label>
+                    <input type="text" name="color" id="color" required placeholder="red/green">
+                </div>
+
+                <div>
+                    <label for="image_link">Link to an image of the apple: </label>
+                    <input type="text" name="image_link" id="image_link" placeholder="https://www.Website.com/path/to/apple/image">
+                </div>
+
+                <div>
+                    <label for="notes">Notes (Optional): </label>
+                    <input type="text" name="notes" id="notes" placeholder="Enter any other notes about the apple here.">
+                </div>
+
+                <div>
+                    <label for="avgPrice"> Price per apple: </label>
+                    <input type="number" name="avgPrice" id="avgPrice" required placeholder="1.99">
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </body>
+</html>
