@@ -10,6 +10,7 @@ router.use((req, res, next) => {
   res.locals.nickname = '';
   res.locals.origin = '';
   res.locals.color = '';
+  res.locals.image_link = '',
   res.locals.AvgPrice = '';
   res.locals.notes = '';
   next();

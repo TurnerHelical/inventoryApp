@@ -38,22 +38,12 @@ h2 {
 
 
 .appleInfo {
+    display: flex;
+    align-items: center;
     padding: 10px 0px;
+    height: 100%;
 }
 
 .appleName {
     font-size: 24px;
-}
-
-.lowStock {
-    background-color: yellow;
-    border-radius: 10px;
-    padding: 0 10px;
-    width: 125px;
-}
-
-.noStock {
-    background-color: red;
-    border-radius: 10px;
-    padding: 0px 5px;
 }
