@@ -52,3 +52,11 @@ h2 {
 .appleName {
     font-size: 24px;
 }
+
+main button {
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    background-color: blueviolet;
+    font-size: 24px;
+}
