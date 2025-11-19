@@ -42,7 +42,8 @@ async function getAppleById(req, res) {
             notes: apple.notes,
             color: apple.color,
             avgPrice: apple.avg_price,
-            success: req.query.success
+            success: req.query.success,
+            id: apple.id,
             
         });
     } catch (err) {

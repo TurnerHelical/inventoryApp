@@ -69,3 +69,24 @@ h2 {
 #price {
     grid-area: 3 / 1 / 4 / 3;
 }
+
+#buttonCtr {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+#buttonCtr a {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 100%);
+}
+
+#buttonCtr a:hover{
+    cursor: pointer;
+    box-shadow: none;
+    background-color: white;
+}
