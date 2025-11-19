@@ -6,7 +6,7 @@
         <%- include('partials/header') %>
 
         <main>
-            <form action="/apples/update/:id" method="POST">
+            <form action='/apples/update/<%=apple.id%>' method="POST">
                 <h2>Update Apple Info</h2>
                 <div>
                     <label for="name">Name: </label>
@@ -65,11 +65,16 @@
 
                 <div>
                     <label for="avgPrice"> Price per apple: </label>
-                    <input type="number" name="avgPrice" id="avgPrice" required value="<%=apple.avg_price%>" placeholder="2.99">
+                    <input type="numeric" name="avgPrice" id="avgPrice" required value="<%=apple.avg_price%>" placeholder="2.99" pattern="^\d+\.\d{2}$">
                 </div>
 
                 <button type="submit">Submit</button>
             </form>
         </main>
+        <% if (success) { %>
+            <script>
+                alert('Apple has been updated');    
+            </script>
+      <% } %>
     </body>
 </html>

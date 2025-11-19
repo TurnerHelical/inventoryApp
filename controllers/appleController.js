@@ -42,6 +42,7 @@ async function getAppleById(req, res) {
             notes: apple.notes,
             color: apple.color,
             avgPrice: apple.avg_price,
+            success: req.query.success
             
         });
     } catch (err) {
@@ -55,11 +56,13 @@ async function getAppleById(req, res) {
 };
 
 async function newAppleGet(req, res) {
+    
 
     try {
         res.render('newApple', {
         title: 'New Apple Form',
         stylesheet:'/styles/update.css',
+        success: req.query.success,
         
         });
     } catch (err) {
@@ -88,7 +91,7 @@ async function newApplePost(req, res) {
             avgPrice:`${req.body.avgPrice}`
         }
         await db.newApple(apple);
-        res.redirect('/new?success=1');
+        res.redirect('/apples/new?success=1');
     } catch (err) {
         res.status(500).render('error', {
             title:'Server Error',
@@ -107,6 +110,7 @@ async function updateAppleFormGet(req, res) {
             title: 'Update Apple Form',
             stylesheet:'/styles/update.css',
             apple,
+            success: req.query.success,
         });
     } catch (err) {
         res.status(500).render('error', {
@@ -119,9 +123,10 @@ async function updateAppleFormGet(req, res) {
     
 };
 
-async function updateAppleFormPut(req, res) {
+async function updateAppleFormPost(req, res) {
     try {
         const apple = {
+            id: `${req.params.id}`,
             name: `${req.body.name}`,
             nickname:`${req.body.nickname}`,
             origin: `${req.body.origin}`,
@@ -131,13 +136,13 @@ async function updateAppleFormPut(req, res) {
             avgPrice:`${req.body.avgPrice}`
         };
         await db.updateApple(apple);
-        res.redirect(`/${req.params.id}?success=1`);
+        res.redirect(`/apples/${req.params.id}?success=1`);
     } catch (err) {
-        res.status(500).render('error', {
-            title: 'Server Error',
+        res.status(400).render('error', {
+            title: 'Bad Request',
             stylesheet: '/styles/error.css',
             error: err.message,
-            error_code:'500'
+            error_code:'400'
         });
     };
 };
@@ -156,4 +161,4 @@ async function deleteApple(req, res) {
     };
 };
 
-module.exports = {deleteApple, updateAppleFormGet, updateAppleFormPut, newAppleGet, newApplePost, getAllApplesRender, getAppleById};
+module.exports = {deleteApple, updateAppleFormGet, updateAppleFormPost, newAppleGet, newApplePost, getAllApplesRender, getAppleById};

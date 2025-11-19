@@ -6,7 +6,6 @@ main {
 
 form {
     display: grid;
-    grid-template: repeat(auto-fill, minmax(1fr, 50px)) / 1fr;
     text-align: center;
     gap: 20px;
 }
@@ -29,4 +28,19 @@ form div{
 textarea {
     resize: none;
     text-align: center;
+}
+
+button {
+    width: fit-content;
+    justify-self: center;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: aqua;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 50%);
+}
+
+button:hover {
+    box-shadow: none;
+    background-color: cadetblue;
 }

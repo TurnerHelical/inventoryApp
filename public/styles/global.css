@@ -38,3 +38,37 @@ nav {
 a {
     all: unset;
 }
+
+footer {
+    display: flex;
+    background-color: aqua;
+    padding: 50px;
+    flex:1;
+    justify-content: space-around;
+    
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+}
+
+#logo img {
+    max-height: 300px;
+}
+
+#siteInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#siteInfo p {
+    max-width: 50%;
+    text-align: center;
+}

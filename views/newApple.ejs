@@ -5,6 +5,8 @@
     <body>
         <%- include('partials/header') %>
 
+
+
         <main>
             <form action="/apples/new" method="POST">
                 <h2>Add New Apple</h2>
@@ -40,11 +42,16 @@
 
                 <div>
                     <label for="avgPrice"> Price per apple: </label>
-                    <input type="number" name="avgPrice" id="avgPrice" required placeholder="1.99">
+                    <input type="numeric" name="avgPrice" id="avgPrice" required placeholder="1.99" pattern="^\d+\.\d{2}$">
                 </div>
 
                 <button type="submit">Submit</button>
             </form>
         </main>
+                <% if (success) { %>
+                <script>
+                    alert('Apple added successfully!');
+                </script>
+            <% } %>
     </body>
 </html>

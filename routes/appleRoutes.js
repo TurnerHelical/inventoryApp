@@ -22,7 +22,7 @@ router.post('/new', controller.newApplePost);
 
 router.get('/update/:id', controller.updateAppleFormGet);
 
-router.put('/update/:id', controller.updateAppleFormPut);
+router.post('/update/:id', controller.updateAppleFormPost);
 
 router.get('/delete/:id', controller.deleteApple);
 
