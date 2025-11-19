@@ -56,6 +56,10 @@ footer div {
     max-width: 50%;
 }
 
+#logo {
+    width: 100%;
+}
+
 #logo img {
     max-height: 300px;
 }
@@ -72,3 +76,4 @@ footer div {
     max-width: 50%;
     text-align: center;
 }
+
