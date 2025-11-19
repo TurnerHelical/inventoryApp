@@ -59,4 +59,11 @@ main button {
     padding: 20px 40px;
     background-color: blueviolet;
     font-size: 24px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 100%);
+}
+
+main button:hover {
+    cursor: pointer;
+    box-shadow: none;
+    background-color: burlywood;
 }
