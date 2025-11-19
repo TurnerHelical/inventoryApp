@@ -14,7 +14,7 @@ main {
 
 #appleNotes {
     width: 20vw;
-    background-color: blue;
+    background-color: #ec994b;
     min-height: 400px;
     margin-top: 15vh;
     display: flex;
@@ -80,8 +80,9 @@ h2 {
 #buttonCtr a {
     font-size: 20px;
     padding: 10px 20px;
-    background-color: blue;
+    background-color: #64821A;
     border-radius: 10px;
+    color: antiquewhite;
     box-shadow: 0 0 5px rgba(0, 0, 0, 100%);
 }
 
