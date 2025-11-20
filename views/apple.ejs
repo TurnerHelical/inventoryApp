@@ -30,8 +30,19 @@
        <% } %>
        <div id="buttonCtr">
             <a href= '/apples/update/<%=id%>'>Update Apple</a>
-            <a href='/apples/delete/<%=id%>'>Delete Apple</a>
+            <a href='/apples/delete/<%=id%>' id="deleteApple">Delete Apple</a>
        </div>
        <%- include('partials/footer') %>
+       <script>
+        const deleteApple = document.getElementById('deleteApple');
+        deleteApple.addEventListener('click', function (e) {
+            const secretPassword = prompt('Enter the admin password to delete this apple.');
+            if (secretPassword != 'superSecretPassword') {
+                alert('Incorrect password, please try again');
+                e.preventDefault();
+            } 
+        });
+    
+       </script>
     </body>
 </html>

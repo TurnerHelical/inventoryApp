@@ -64,13 +64,17 @@
                 </div>
 
                 <div>
-                    <label for="avgPrice"> Price per apple: </label>
+                    <label for="avgPrice"> Average price per apple: </label>
                     <input type="numeric" name="avgPrice" id="avgPrice" required value="<%=apple.avg_price%>" placeholder="2.99" pattern="^\d+\.\d{2}$">
                 </div>
+
+                
 
                 <button type="submit">Submit</button>
             </form>
         </main>
+        
+
         <% if (success) { %>
             <script>
                 alert('Apple has been updated');    

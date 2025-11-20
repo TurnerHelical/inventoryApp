@@ -41,18 +41,30 @@
                 </div>
 
                 <div>
-                    <label for="avgPrice"> Price per apple: </label>
+                    <label for="avgPrice"> Average price per apple: </label>
                     <input type="numeric" name="avgPrice" id="avgPrice" required placeholder="1.99" pattern="^\d+\.\d{2}$">
+                </div>
+
+                <div>
+                    <label for="adminPassword">Enter the Admin password: </label>
+                    <input type="password" name="adminPassword" id="adminPassword" required>
                 </div>
 
                 <button type="submit">Submit</button>
             </form>
         </main>
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <script>
+                        alert('<%=error%>');
+                    </script>
+                <% } %>
+
                 <% if (success) { %>
                 <script>
                     alert('Apple added successfully!');
                 </script>
             <% } %>
+
         <%- include('partials/footer') %>
     </body>
 </html>
